@@ -1,0 +1,19 @@
+{
+    "name": "SOSXR.ClonedProjectHelper.Editor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:eb1034696cce04f25a4a7d38d2e0e5a4",
+        "GUID:c3bd32bc9bfca49e3a11a0e20fa71d60"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
