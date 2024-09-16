@@ -1,4 +1,3 @@
-using SOSXR.EnhancedLogger;
 using UnityEngine;
 
 
@@ -12,7 +11,7 @@ namespace SOSXR.ClonedProjectHelpers
             {
                 var fullPath = Application.dataPath;
 
-                Log.Info(nameof(ProjectName), "Full Path is", fullPath);
+                Debug.Log(nameof(FullPath) + " Full Path is " + fullPath);
 
                 return fullPath;
             }
@@ -25,7 +24,7 @@ namespace SOSXR.ClonedProjectHelpers
 
             var projectName = split[^2];
 
-            Log.Info(nameof(ProjectName), "Project Name is", projectName);
+            Debug.LogFormat(nameof(ProjectName) + " Project Name is " + projectName);
 
             return projectName;
         }

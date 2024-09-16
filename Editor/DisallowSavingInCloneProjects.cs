@@ -1,6 +1,4 @@
 using SOSXR.ClonedProjectHelpers;
-using SOSXR.EnhancedLogger;
-
 using UnityEditor;
 using UnityEngine;
 using static System.IO.Path;
@@ -23,7 +21,7 @@ public class DisallowSavingInCloneProjects : AssetModificationProcessor
     {
         if (ProjectName.FullPath.Contains(disallowSavingInProjectNamesContaining))
         {
-            Log.Error(nameof(DisallowSavingInCloneProjects), "Saving of scenes and assets is disabled in projects containing the word", disallowSavingInProjectNamesContaining, "in their path");
+            Debug.LogError(nameof(DisallowSavingInCloneProjects) + " Saving of scenes and assets is disabled in projects containing the word " + disallowSavingInProjectNamesContaining + "in their path");
 
             DisplayPopupDialog();
 
@@ -43,14 +41,7 @@ public class DisallowSavingInCloneProjects : AssetModificationProcessor
             sceneName = GetFileNameWithoutExtension(path);
         }
 
-        if (sceneName.Length == 0)
-        {
-            return paths;
-        }
-
-        Log.Info(nameof(DisallowSavingInCloneProjects), "Normal saving of scenes and assets", sceneName);
-
-        return paths;
+        return sceneName.Length == 0 ? paths : paths;
     }
 
 

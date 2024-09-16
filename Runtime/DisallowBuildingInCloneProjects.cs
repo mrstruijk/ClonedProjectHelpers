@@ -1,13 +1,11 @@
-using SOSXR.EnhancedLogger;
-
 using UnityEditor;
 using UnityEditor.Build;
 using UnityEditor.Build.Reporting;
+using UnityEngine;
 
 
 namespace SOSXR.ClonedProjectHelpers
 {
-
     [InitializeOnLoad]
     public class DisallowBuildingInCloneProjects : IPreprocessBuildWithReport
     {
@@ -26,7 +24,7 @@ namespace SOSXR.ClonedProjectHelpers
         {
             if (ProjectName.FullPath.Contains(disallowBuildingInProjectNamesContaining))
             {
-                Log.Error(nameof(DisallowBuildingInCloneProjects), "Building is disabled in projects containing the word", disallowBuildingInProjectNamesContaining, "in their path");
+                Debug.LogError(nameof(DisallowBuildingInCloneProjects) + " Building is disabled in projects containing the word " + disallowBuildingInProjectNamesContaining + " in their path");
                 DisplayPopupDialog();
 
                 throw new BuildFailedException("Building is disabled in clone projects.");
@@ -38,7 +36,7 @@ namespace SOSXR.ClonedProjectHelpers
         {
             if (ProjectName.FullPath.Contains(disallowBuildingInProjectNamesContaining))
             {
-                Log.Error(nameof(DisallowBuildingInCloneProjects), "Building is disabled in projects containing the word", disallowBuildingInProjectNamesContaining, "in their path");
+                Debug.LogError(nameof(DisallowBuildingInCloneProjects) + " Building is disabled in projects containing the word " + disallowBuildingInProjectNamesContaining + " in their path");
                 DisplayPopupDialog();
 
                 return;
