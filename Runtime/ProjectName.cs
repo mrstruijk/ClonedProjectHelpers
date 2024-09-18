@@ -11,8 +11,6 @@ namespace SOSXR.ClonedProjectHelpers
             {
                 var fullPath = Application.dataPath;
 
-                Debug.Log(nameof(FullPath) + " Full Path is " + fullPath);
-
                 return fullPath;
             }
         }
@@ -23,8 +21,6 @@ namespace SOSXR.ClonedProjectHelpers
             var split = FullPath.Split('/');
 
             var projectName = split[^2];
-
-            Debug.LogFormat(nameof(ProjectName) + " Project Name is " + projectName);
 
             return projectName;
         }
